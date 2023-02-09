@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --primary-color:#22254b;
+    --secondary-color:#373b69;
+}
+body{
+    background-color:var(--primary-color);
+    font-family: "Roboto" , sans-serif;
+}
+header{
+    padding: 1rem;
+    display:flex;
+    justify-content: flex-end;
+    background-color: var(--secondary-color);
+}
+.search{
+    background-color:transparent;
+    border:2px solid var(--primary-color);
+    padding:0.5rem 1rem;
+    border-radius: 50px;
+    font-size:1rem;
+    color:#fff;
+    font-family: inherit;
+}
+.search:focus{
+    outline:none;
+    background-color: var(--primary-color);
+}
+.search::placeholder{
+    color:#7378c5;
+}
+main{
+    display: grid;
+    grid-template-columns:repeat(4,1fr);
+    grid-gap:1.5rem;
+}
+img{
+    width: 100%;
+}
+.movie{
+    width:300px;
+    background-color: var(--secondary-color);
+    box-shadow: 0.2px 4px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    position: relative;
+    overflow: hidden;
+    top:50%;
+    left: 50%;
+    transform:translate(-50%,-50%)
+}
+.movie-info{
+    color:#eee;
+    align-items: center;
+    display:flex;
+    justify-content: space-between;
+    padding: 15px;
+    letter-spacing: 0.5px;
+}
+.movie-info span{
+    background-color: var(--primary-color);
+    border-radius: 3px;
+    font-weight:bold;
+    padding: 0.5rem 0.5rem;
+}
+.movie-info span.green{
+    color:lightgreen;
+}
+.movie-info span.orange{
+    color:orange;
+}
+.movie-info span.red{
+    color:red;
+}
+.overView{
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color:#fff;
+    padding: 1rem;
+    max-height: 100%;
+    transform: translateY(100%);
+    transition:transform 0.3s ease-in;
+}
+.overView h3{
+    padding-bottom: 15px;
+}
+.movie:hover .overView{
+    transform: translateY(0);
+}
+@media screen and (max-width: 980px){
+    main{
+        display:grid;
+        grid-template-columns:repeat(2,1fr)
+    }
+}
+@media screen and (max-width: 556px){
+    main{
+        display:grid;
+        grid-template-columns:repeat(1,1fr)
+    }
+} 
